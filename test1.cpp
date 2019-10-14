@@ -47,11 +47,11 @@ public:
         return p;
     }
 
-    void Union(int a, int b) //结交新朋友，改变朋友圈
+   bool Union(int a, int b) //结交新朋友，改变朋友圈
     {
         int pa = Find(a), pb = Find(b);
         if (pa == pb)
-            return;          //在同一个朋友圈就不用并了
+            return false;          //在同一个朋友圈就不用并了
         if (sz[pa] > sz[pb]) //a朋友圈大，b并入a
         {
             id[pb] = pa;
@@ -64,5 +64,6 @@ public:
         }
 
         count--; //并入后，朋友圈就减少1
+        return true;
     }
 };
