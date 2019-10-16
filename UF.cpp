@@ -62,7 +62,6 @@ public:
             id[pa] = pb;
             sz[pb] += sz[pa];
         }
-
         count--; //并入后，朋友圈就减少1
         return true;
     }
